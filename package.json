@@ -1,0 +1,12 @@
+{
+  "name": "0e6281ec5f2f920d3edf5ad48e463d3c-8ca3486e90fc3c6e6d124a1c7765b420fa0290a2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev":"nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
