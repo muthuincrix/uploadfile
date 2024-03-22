@@ -4,7 +4,7 @@
       const handleImageUpload = (event) => {
         const file = event.target.files[0];
         if (file == null) return;
-        fetch("http://localhost:3022/fileUpload", {
+        fetch("/fileUpload", {
           method: "POST",
           mode: "cors",
           credentials: "include",
