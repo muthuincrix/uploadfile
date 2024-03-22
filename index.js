@@ -8,6 +8,7 @@ http.createServer((req, response) => {
    * `/` loads index.html
    */
   if (req.url == '/' && req.method.toLowerCase() == 'get') {
+    response.setHeader("Access-Control-Allow-Origin", "*")
     response.setHeader('Content-Type', 'text/html')
     const stream = fs.createReadStream(`${__dirname}/zindex.html`)
     // No need to call res.end() because pipe calls it automatically
