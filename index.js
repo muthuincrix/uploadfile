@@ -29,6 +29,7 @@ http.createServer((req, response) => {
 
     response.setHeader('Content-Type', 'application/json')
     response.setHeader("Access-Control-Allow-Origin", "*")
+    response.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
     let contentLength = parseInt(req.headers['content-length'])
     if (isNaN(contentLength) || contentLength <= 0 ) {
       response.statusCode = 411;
