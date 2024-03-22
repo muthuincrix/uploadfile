@@ -21,12 +21,6 @@ http.createServer((req, response) => {
    */
 
 
-  if (req.url == '/' && req.method.toLowerCase() == 'get') {
-    response.setHeader('Content-Type', 'text/html')
-    const stream = fs.createReadStream(`${__dirname}/zindex.html`)
-    // No need to call res.end() because pipe calls it automatically
-    stream.pipe(response)
-  } 
   /**
    * `/fileUpload` only works with POST
    * Saves uploaded files to the root
@@ -34,7 +28,7 @@ http.createServer((req, response) => {
   else if (req.url == '/fileUpload' && req.method.toLowerCase() == 'post') {
 
     response.setHeader('Content-Type', 'application/json')
-
+    response.setHeader("Access-Control-Allow-Origin", "*")
     let contentLength = parseInt(req.headers['content-length'])
     if (isNaN(contentLength) || contentLength <= 0 ) {
       response.statusCode = 411;
