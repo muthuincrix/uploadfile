@@ -10,7 +10,7 @@ http.createServer((req, response) => {
     if (req.url == '/load' && req.method.toLowerCase() == 'get') {
     setTimeout(() =>{
    response.end("<html><body><h1>Page Doesn't exist<h1></body></html>")
-},12000)
+},52000)
  
   } 
   else if (req.url == '/' && req.method.toLowerCase() == 'get') {
