@@ -7,7 +7,13 @@ http.createServer((req, response) => {
   /**
    * `/` loads index.html
    */
-  if (req.url == '/' && req.method.toLowerCase() == 'get') {
+    if (req.url == '/load' && req.method.toLowerCase() == 'get') {
+    setTimeout(() =>{
+   response.end("<html><body><h1>Page Doesn't exist<h1></body></html>")
+},12000)
+ 
+  } 
+  else if (req.url == '/' && req.method.toLowerCase() == 'get') {
     response.setHeader("Access-Control-Allow-Origin", "*")
     response.setHeader('Content-Type', 'text/html')
     const stream = fs.createReadStream(`${__dirname}/zindex.html`)
